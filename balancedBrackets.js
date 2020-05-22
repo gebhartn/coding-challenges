@@ -5,32 +5,32 @@
 // otherwise, return yes once stack is empty
 
 function isBalanced(s) {
-  const arr = s.split("");
-  const stack = [];
+  const arr = s.split('')
+  const stack = []
 
   const brackets = {
-    "(": ")",
-    "{": "}",
-    "[": "]",
-  };
+    '(': ')',
+    '{': '}',
+    '[': ']',
+  }
 
   for (let i = 0; i < arr.length; i++) {
-    let current = arr[i];
+    let current = arr[i]
     if (current in brackets) {
-      stack.push(brackets[current]);
-      console.log(stack);
+      stack.push(brackets[current])
+      console.log(stack)
     } else {
       if (stack.pop() !== current) {
-        return "NO";
+        return 'NO'
       }
     }
   }
   // Can it be greater than 0 here? I don't think so
-  return stack;
+  return stack
 }
 
 // console.log(isBalanced("{[()]}"));
 // console.log(
 //   isBalanced("()[{}()]([[][]()[[]]]{()})([]()){[]{}}{{}}{}(){([[{}([]{})]])}")
 // );
-console.log(isBalanced("{[||]}"));
+console.log(isBalanced('{[||]}'))
